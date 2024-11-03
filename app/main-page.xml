@@ -1,0 +1,23 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="Attendance System" class="bg-blue-600 text-white" />
+    
+    <StackLayout class="p-4 space-y-4">
+        <Label text="{{ lastAction }}" class="text-lg text-center text-gray-600" textWrap="true" />
+        
+        <Button text="Check In" tap="{{ onCheckIn }}" 
+                class="bg-green-500 text-white font-bold py-2 rounded-lg" />
+        
+        <Button text="Check Out" tap="{{ onCheckOut }}" 
+                class="bg-red-500 text-white font-bold py-2 rounded-lg" />
+        
+        <Label text="Recent Records" class="text-xl font-bold mt-4" />
+        <ListView items="{{ records }}" class="h-64 bg-white rounded-lg">
+            <ListView.itemTemplate>
+                <StackLayout class="p-2 border-b border-gray-200">
+                    <Label text="{{ type }}" class="font-semibold" />
+                    <Label text="{{ timestamp }}" class="text-gray-500" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>
